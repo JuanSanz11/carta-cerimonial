@@ -10,7 +10,7 @@ body {
 
 .sobre {
   position: absolute;
-  margin-top: 1100px;
+  margin-top: 1000px;
   width: 900px;
   height: 600px;
   aspect-ratio: 3 / 2; /* mantiene proporción */
@@ -79,7 +79,7 @@ body {
 
 .carta {
   position: absolute;
-  top: 74%; /* misma altura que el sello */
+  top: 86%; /* misma altura que el sello */
   left: 50%;
   transform: translate(-50%, -50%) scale(0); /* empieza invisible y comprimida */
   width: 750px;
@@ -131,7 +131,7 @@ body {
 @media screen and (min-width: 600px) and (min-height: 300px) { 
   .sobre { 
     transform-origin: top center; 
-    top: 55px;
+    top: 0px;
   } 
 }
 
