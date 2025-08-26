@@ -82,7 +82,7 @@ body {
   top: 74%; /* misma altura que el sello */
   left: 50%;
   transform: translate(-50%, -50%) scale(0); /* empieza invisible y comprimida */
-  width: 790px;
+  width: 750px;
   opacity: 0;
   transition: transform 0.8s ease, opacity 0.8s ease;
   z-index: 10; /* por encima del sello */
@@ -131,7 +131,7 @@ body {
 @media screen and (min-width: 600px) and (min-height: 300px) { 
   .sobre { 
     transform-origin: top center; 
-    top: 50px;
+    top: 55px;
   } 
 }
 
