@@ -79,7 +79,7 @@ body {
 
 .carta {
   position: absolute;
-  top: 84%; /* misma altura que el sello */
+  top: 74%; /* misma altura que el sello */
   left: 50%;
   transform: translate(-50%, -50%) scale(0); /* empieza invisible y comprimida */
   width: 790px;
