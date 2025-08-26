@@ -1,0 +1,137 @@
+body {
+  background-color: #ECF2DE;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.sobre {
+  position: absolute;
+  margin-top: 700px;
+  width: 900px;
+  height: 600px;
+  aspect-ratio: 3 / 2; /* mantiene proporción */
+}
+
+.cuerpo {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #B3CC7B;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.solapa {
+  position: absolute;
+  //bottom: 0; /* ← cambia de top a bottom */
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: calc(900px / 2) solid transparent;
+  border-right: calc(900px / 2) solid transparent;
+  border-top: calc(1650px / 3.75) solid #CDE1A2; /* ← cambia de bottom a top */
+  transform-origin: top;
+  transition: transform 0.8s ease;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.solapa-inferior {
+  position: absolute;
+
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: calc(900px / 2) solid transparent;
+  border-right: calc(900px / 2) solid transparent;
+  border-bottom: calc(950px / 3.75) solid #CDE1A2; /* Triángulo apuntando hacia abajo */
+  opacity: 0.4;
+  z-index: 2;
+}
+
+
+
+.btn-sello {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.btn-sello img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  //box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.6s ease;
+}
+
+.carta {
+  position: absolute;
+  top: 84%; /* misma altura que el sello */
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0); /* empieza invisible y comprimida */
+  width: 690px;
+  opacity: 0;
+  transition: transform 0.8s ease, opacity 0.8s ease;
+  z-index: 10; /* por encima del sello */
+  cursor: pointer;
+  pointer-events: none;
+  border-radius: 8px;
+}
+
+
+.sobre.abierto .solapa {
+  transform: rotateX(-180deg);
+}
+
+.sobre.abierto .carta {
+  transform: translate(-50%, -120%) scale(1.1);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@keyframes giro360 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.btn-sello.girando img {
+  animation: giro360 0.6s ease;
+}
+
+@media screen and (min-width: 1300px) { 
+  .sobre { 
+    transform: 
+    scale(0.5); 
+    transform-origin: top center; } 
+  } 
+
+@media screen and (min-width: 1300px) and (min-height: 700px) { 
+  .sobre { 
+    transform: scale(0.5); 
+    transform-origin: top center; } 
+}
+
+@media screen and (min-width: 600px) and (min-height: 300px) { 
+  .sobre { 
+    transform-origin: top center; 
+    top: 50px;
+  } 
+}
+
